@@ -5,6 +5,7 @@ import authConfig from "./auth.config"
 import { db } from "./lib/db";
 import { getAccountByUserId, getUserById } from "./modules/auth/actions";
 
+
  
 
  
@@ -13,7 +14,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
     /**
      * Handle user creation and account linking after a successful sign-in
      */
-    async signIn({ user, account }) {
+    async signIn({ user, account, profile }) {
       if (!user || !account) return false;
 
       // Check if the user already exists
@@ -114,5 +115,6 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
   
   secret: process.env.AUTH_SECRET,
   adapter: PrismaAdapter(db),
+  session: { strategy: "jwt" },
   ...authConfig,
 })
