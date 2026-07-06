@@ -6,6 +6,7 @@ import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
 import { ThemeProvider } from "@/components/providers/theme-providers";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,6 +45,7 @@ export default async function RootLayout({
           >
             <TooltipProvider>
               {children}
+              <Toaster richColors position="top-right" />
             </TooltipProvider>
           </ThemeProvider>
         </body>
