@@ -14,6 +14,14 @@
 
 # 📸 Preview
 
+## 🔐 Sign In
+
+Secure authentication with Google and GitHub using NextAuth.js.
+
+![Sign In](public/sign-in.png)
+
+---
+
 ## 🏠 Landing Page
 
 ![Landing Page](public/landing-page.png)
